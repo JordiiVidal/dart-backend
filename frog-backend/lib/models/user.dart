@@ -11,8 +11,10 @@ part 'user.g.dart';
 class User {
   /// Constructor
   User({required this.name, required this.email});
+
   ///Name
   final String name;
+
   /// Email
   final String email;
 
@@ -22,7 +24,7 @@ class User {
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 
   /// `toJson` is the convention for a class to declare support for
-  /// serialization to JSON. The implementation simply calls the private, 
+  /// serialization to JSON. The implementation simply calls the private,
   /// generated helper method `_$UserToJson`.
   Map<String, dynamic> toJson() => _$UserToJson(this);
 }

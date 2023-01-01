@@ -14,3 +14,12 @@ dynamic name = 2;
 dart pub global activate dart_frog_cli
 dart_frog dev
 ```
+## JSON Serializable
+1. One-time code generation
+```dart
+dart run build_runner build --delete-conflicting-outputs
+```
+1. Generating code continously
+```dart
+dart run build_runner watch --delete-conflicting-outputs
+```
