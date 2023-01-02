@@ -10,5 +10,5 @@ Middleware countProvider() {
 }
 
 Future<int> add() async {
-  return Future.value(count++);
+  return Future.value(++count);
 }
