@@ -1,8 +1,12 @@
 import 'package:dart_frog/dart_frog.dart';
 
 Future<Response> onRequest(RequestContext context) async {
-  final provider = await context.read<Future<int>>();
+  final count = await context.readAsync();
   return Response(
-    body: provider.toString(),
+    body: count.toString(),
   );
+}
+
+extension ReadAsync on RequestContext {
+  Future<int> readAsync<int extends Object>() => read<Future<int>>();
 }
