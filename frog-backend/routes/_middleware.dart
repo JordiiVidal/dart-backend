@@ -1,7 +1,6 @@
 import 'package:dart_frog/dart_frog.dart';
 
 Handler middleware(Handler handler) {
-  //return handler.use(requestLogger());
   return (context) async {
     // Execute code before request is handled.
     print('Before');
