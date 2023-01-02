@@ -24,11 +24,11 @@ Future<Response> onRequest(RequestContext context) async {
 
   return Response.json(
     statusCode: 204, //Default 200
-    body: {
+    body: <String, dynamic>{
       'request_body': body,
       'params': params,
       'method': method,
-      headers: {'hello': 'world'}
     },
+    headers: {'hello': 'world'},
   );
 }
