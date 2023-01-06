@@ -26,8 +26,8 @@ dart run build_runner watch --delete-conflicting-outputs
 
 ## Mason
 1. Create new packages quickly
-``dart
+```dart
 dart pub add mason
 mason add -g very_good_dart_package
 mason make very_good_dart_package --project_name "name" --description "description" -o packages
-``
+```
