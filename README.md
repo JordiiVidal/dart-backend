@@ -19,7 +19,15 @@ dart_frog dev
 ```dart
 dart run build_runner build --delete-conflicting-outputs
 ```
-1. Generating code continously
+2. Generating code continously
 ```dart
 dart run build_runner watch --delete-conflicting-outputs
 ```
+
+## Mason
+Create new packages quickly
+``dart
+dart pub add mason
+mason add -g very_good_dart_package
+mason make very_good_dart_package --project_name "name" --description "description" -o packages
+``
