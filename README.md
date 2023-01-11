@@ -31,3 +31,8 @@ dart pub add mason
 mason add -g very_good_dart_package
 mason make very_good_dart_package --project_name "name" --description "description" -o packages
 ```
+## Postman
+- Import JSON file
+```dart
+postman/collections
+```
