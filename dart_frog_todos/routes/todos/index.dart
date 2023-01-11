@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:dart_frog/dart_frog.dart';
 import 'package:todos_data_source/todos_data_source.dart';
 
@@ -19,13 +21,16 @@ Future<Response> onRequest(RequestContext context) async {
 Future<Response> _get(RequestContext context) async {
   final provider = await context.read<Future<TodosDataSource>>();
   final todos = await provider.readAll();
-  return Response.json(body: todos);
+  return Response.json(
+    body: todos,
+  );
 }
 
 Future<Response> _post(RequestContext context) async {
   final provider = await context.read<Future<TodosDataSource>>();
-  final params = context.request.uri.queryParameters;
-  final todo = Todo(title: params['title'] ?? '');
-  await provider.create(todo);
-  return Response.json(body: todo);
+  final todo = Todo.fromJson(context.request.uri.queryParameters);
+  return Response.json(
+    statusCode: HttpStatus.created,
+    body: await provider.create(todo),
+  );
 }
