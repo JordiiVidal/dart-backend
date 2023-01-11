@@ -14,7 +14,9 @@ Future<Response> onRequest(RequestContext context) async {
     case HttpMethod.options:
     case HttpMethod.patch:
     case HttpMethod.put:
-      return Response(body: 'Not found');
+      return Response(
+        statusCode: HttpStatus.methodNotAllowed,
+      );
   }
 }
 
