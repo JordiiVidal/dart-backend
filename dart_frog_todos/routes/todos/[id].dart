@@ -1,4 +1,4 @@
-import 'dart:html';
+import 'dart:io';
 
 import 'package:dart_frog/dart_frog.dart';
 import 'package:todos_data_source/todos_data_source.dart';
@@ -15,7 +15,7 @@ Future<Response> onRequest(RequestContext context, String id) async {
     case HttpMethod.get:
       return _get(todo);
     case HttpMethod.put:
-      return _put(context, todo);
+      return _put(context, id, todo);
     case HttpMethod.delete:
       return _delete(context, id);
     case HttpMethod.head:
@@ -30,15 +30,24 @@ Future<Response> _get(Todo todo) async {
   return Response.json(body: todo);
 }
 
-Future<Response> _put(RequestContext context, Todo todo) async {
-  //TODO UPDATE
+Future<Response> _put(RequestContext context, String id, Todo todo) async {
+  final provider = await context.read<Future<TodosDataSource>>();
+  final updatedTodo = Todo.fromJson(context.request.uri.queryParameters);
+  final newTodo = await provider.update(
+    id,
+    todo.copyWith(
+      title: updatedTodo.title,
+      description: updatedTodo.description,
+      isCompleted: updatedTodo.isCompleted,
+    ),
+  );
   return Response.json(
-    body: todo,
+    body: newTodo,
   );
 }
 
 Future<Response> _delete(RequestContext context, String id) async {
-  final dataSource = context.read<TodosDataSource>();
+  final dataSource = await context.read<Future<TodosDataSource>>();
   await dataSource.delete(id);
   return Response.json(statusCode: HttpStatus.noContent);
 }
