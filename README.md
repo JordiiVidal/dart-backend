@@ -34,5 +34,5 @@ mason make very_good_dart_package --project_name "name" --description "descripti
 ## Postman
 - Import JSON file
 ```dart
-postman/collections
+./postman/collections
 ```
