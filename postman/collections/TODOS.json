@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "98be4055-4180-408e-bd54-4421dc55623c",
+		"name": "TODOS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "3934378-98be4055-4180-408e-bd54-4421dc55623c"
+	},
+	"item": [
+		{
+			"name": "READ ALL",
+			"id": "b1e94cec-1e15-4758-bdd8-c815521be589",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/todos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE",
+			"id": "18f5ac59-9506-43bc-8efd-795c8f123cd1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/todos?title=HOPE 24&descriptio=wonderful adventure",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todos"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "HOPE 24"
+						},
+						{
+							"key": "descriptio",
+							"value": "wonderful adventure"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "READ",
+			"id": "3578fbe7-c381-4746-9e90-bfdcca2944e5",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/todos/7397040d-20e6-4b07-b0ce-c61a1411592e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todos",
+						"7397040d-20e6-4b07-b0ce-c61a1411592e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE",
+			"id": "fdeed41e-9bba-45e6-9f72-a4734f2ec957",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/todos/7397040d-20e6-4b07-b0ce-c61a1411592e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todos",
+						"7397040d-20e6-4b07-b0ce-c61a1411592e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE",
+			"id": "cebda7bb-6935-4283-bae7-1302cf7d2036",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/todos/7397040d-20e6-4b07-b0ce-c61a1411592e?title=HOPE 241&description=wonderful adventure 2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todos",
+						"7397040d-20e6-4b07-b0ce-c61a1411592e"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "HOPE 241"
+						},
+						{
+							"key": "description",
+							"value": "wonderful adventure 2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
