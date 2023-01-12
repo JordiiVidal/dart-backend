@@ -1,0 +1,10 @@
+name: client
+description: client counter
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: ">=2.18.0 <3.0.0"
+
+dependencies:
+  dart_frog_web_socket: ^0.1.0-dev.2
