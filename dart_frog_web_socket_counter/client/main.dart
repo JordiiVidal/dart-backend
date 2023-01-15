@@ -6,7 +6,8 @@ void main() {
   // Listen
   channel.stream.listen(print);
   // Send
-  channel.sink.add('Hi from client');
+  channel.sink.add('__increment__');
+  channel.sink.add('__decrement__');
   // Close
   channel.sink.close();
 }
